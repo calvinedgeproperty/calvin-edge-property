@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 6.7%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 6.7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 6.7%;
+
+    --primary: 210 100% 12.5%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 10% 96%;
+    --secondary-foreground: 0 0% 6.7%;
+
+    --muted: 210 10% 96%;
+    --muted-foreground: 0 0% 46%;
+
+    --accent: 0 0% 66%;
+    --accent-foreground: 0 0% 6.7%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 210 100% 12.5%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 6.7%;
+    --sidebar-primary: 210 100% 12.5%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 10% 96%;
+    --sidebar-accent-foreground: 0 0% 6.7%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 210 100% 12.5%;
+
+    /* Custom tokens */
+    --ce-deep-blue: 210 100% 12.5%;
+    --ce-near-black: 0 0% 6.7%;
+    --ce-light-gray: 0 0% 66%;
+    --ce-white: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .ce-container {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+  .ce-section {
+    @apply py-20 lg:py-28;
+  }
+  .ce-heading-xl {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight;
+  }
+  .ce-heading-lg {
+    @apply text-3xl md:text-4xl font-bold leading-tight;
+  }
+  .ce-heading-md {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+  .ce-body {
+    @apply text-base leading-relaxed text-muted-foreground;
+  }
+  .ce-label {
+    @apply text-xs font-medium uppercase tracking-widest text-muted-foreground;
+  }
+}
+
+/* Loading screen animation */
+@keyframes ce-trace {
+  0% { stroke-dashoffset: 200; }
+  50% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -200; }
+}
+
+@keyframes ce-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ce-pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
